@@ -13,3 +13,19 @@ for numbers divisible by only one of those).
 a significant percentage of programmer candidates. So if you solved it, your
 labor market value just went up.)
 */
+
+function allNumber(numbers) {
+  let number = 0;
+  for (let i = 1; i <= numbers; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log(i + " MigraCode");
+    } else if (i % 3 === 0) {
+      console.log(i + " Code");
+    } else if (i % 5 === 0) {
+      console.log(i + " Migra");
+    }
+  }
+  return number;
+}
+numbers = 100;
+allNumber(numbers);
