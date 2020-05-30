@@ -16,15 +16,14 @@ console.log(namesArray[0]); //"Jose"
 console.log(namesArray.length); //2
 */
 
-function find(cities, letter){
-	var counter = 0;
-	//your code here
-	return counter;
+function find(cities, letter) {
+  var counter = 0;
+  //your code here
+  counter = cities.filter((city) => city.startsWith(letter) !== false);
+  return counter.length;
 }
-
 
 const citiesArray = ["Amsterdam", "Athens", "Barcelona", "Madrid"];
 
-
-console.log("Number of cities with A = " + find(citiesArray, 'A'));
-console.log("Number of cities with B = " + find(citiesArray, 'B'));
+console.log("Number of cities with A = " + find(citiesArray, "A"));
+console.log("Number of cities with B = " + find(citiesArray, "B"));
