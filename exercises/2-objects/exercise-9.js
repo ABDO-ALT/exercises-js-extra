@@ -84,15 +84,9 @@ function addToShoppingCart(id) {
   for (let i = 0; i < products.length; i++) {
     //console.log(products[i]);
     if (products[i].id === id) {
-      //console.log(products[i]);
       shoppingCart.selectedProducts.push(products[i]);
-      //shoppingCart.totalPrice.push(products[i].price);
-      //console.log(products[i].price);
-      //console.log("sum", products[i].price);
-      //console.log("sum1", shoppingCart.totalPrice);
       const sum = products[i].price + shoppingCart.totalPrice;
       shoppingCart.totalPrice = sum;
-      // products[i].price;
     }
   }
 }

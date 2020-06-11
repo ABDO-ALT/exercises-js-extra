@@ -59,9 +59,22 @@ var movies = [
 ];
 
 // create showMovies function
-
-
+// first create function
+// and get the elmant
+// second make loop
+function showMovies() {
+  let allMovies = document.getElementById("all-movies");
+  setTimeout(() => {
+    for (let i = 0; i < movies.length; i++) {
+      document.getElementsByTagName("span");
+      document.getElementById("movies-number").innerHTML = `${movies.length}`;
+      let paragraph = document.createElement("p");
+      allMovies.appendChild(paragraph);
+      paragraph.innerText = `The titl is ${movies[i].title}. And the Director is ${movies[i].director}. And the type is ${movies[i].type} `;
+    }
+  }, 1000);
+}
+showMovies();
 // create a new movie object for your favorite movie
-
 
 // create addMovies function
