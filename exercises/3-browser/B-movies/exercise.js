@@ -62,19 +62,57 @@ var movies = [
 // first create function
 // and get the elmant
 // second make loop
+
 function showMovies() {
   let allMovies = document.getElementById("all-movies");
-  setTimeout(() => {
-    for (let i = 0; i < movies.length; i++) {
-      document.getElementsByTagName("span");
-      document.getElementById("movies-number").innerHTML = `${movies.length}`;
-      let paragraph = document.createElement("p");
-      allMovies.appendChild(paragraph);
-      paragraph.innerText = `The titl is ${movies[i].title}. And the Director is ${movies[i].director}. And the type is ${movies[i].type} `;
-    }
-  }, 1000);
+  document.getElementById("movies-number").innerHTML = movies.length;
+  for (let i = 0; i < movies.length; i++) {
+    document.getElementsByTagName("span");
+    console.log(movies);
+
+    let paragraph = document.createElement("p");
+    allMovies.appendChild(paragraph);
+    paragraph.innerText = `The titl is ${movies[i].title}. And the Director is ${movies[i].director}. And the type is ${movies[i].type} `;
+  }
 }
-showMovies();
-// create a new movie object for your favorite movie
+// //let settimeout = setTimeout(() => showMovies(), 1000);
+
+// // create a new movie object for your favorite movie
+
+let myMovie = {
+  title: "Fast and Furious 9 ",
+  director: "Justin Lin",
+  type: "	Daniel Casey",
+  haveWatched: true,
+};
 
 // create addMovies function
+function addMovies(showMovies, myMovie) {
+  setTimeout(() => {
+    movies.push(myMovie);
+    showMovies();
+  }, 2000);
+}
+addMovies(showMovies, myMovie);
+
+function newInput() {
+  let displayMovies = document.getElementById("all-movies");
+  while (displayMovies.childNodes.length > 2) {
+    displayMovies.removeChild(displayMovies.lastChild);
+  }
+  let titleInput = document.getElementById("title").value;
+  let directorInput = document.getElementById("director").value;
+  let typeInput = document.getElementById("type").value;
+  let haveWatchedOption = document.getElementById("haveWatched").value;
+  let newMovie = {
+    title: titleInput,
+    director: directorInput,
+    type: typeInput,
+    haveWatched: haveWatchedOption,
+  };
+  addMovies(showMovies, newMovie);
+}
+
+let button = document
+  .getElementById("saveMovie")
+  .addEventListener("click", newInput);
